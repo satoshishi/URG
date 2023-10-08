@@ -1,0 +1,77 @@
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.{shader,compute,cginc}]
+indent_size = 4
+
+[*.cs]
+indent_size = 4
+
+# Analyzers config
+## The file header is missing or not located at the top of the file.
+dotnet_diagnostic.SA1633.severity = none
+## Documentation text should end with a period.
+dotnet_diagnostic.SA1629.severity = none
+## 'new' expression can be simplified.
+dotnet_diagnostic.IDE0090.severity = none
+## Name can be simplified.
+dotnet_diagnostic.IDE0003.severity = none
+## Using directive is unnecessary.
+dotnet_diagnostic.IDE0005.severity = none
+## Unnecessary using directive.
+dotnet_diagnostic.CS8019.severity = warning
+# Make field readonly.
+dotnet_diagnostic.IDE0044.severity = none
+# Using directive for namespace '*.*' should be qualified.
+dotnet_diagnostic.SA1135.severity = none
+# Using directive must be placed outside of a namespace declaration.
+dotnet_diagnostic.IDE0065.severity = none
+# Expression value is never used.
+dotnet_diagnostic.IDE0058.severity = none
+# Arithmetic expressions should declare precedence.
+dotnet_diagnostic.SA1407.severity = none
+# Local function can be made static.
+dotnet_diagnostic.IDE0062.severity = none
+# Use 'switch' expression.
+dotnet_diagnostic.IDE0066.severity = none
+# Elements should be documented.
+dotnet_diagnostic.SA1600.severity = none
+# Enumeration items should be documented.
+dotnet_diagnostic.SA1602.severity = none
+# Element documentation header should be preceded by blank line.
+dotnet_diagnostic.SA1514.severity = none
+# Use conditional expression for assignment.
+dotnet_diagnostic.IDE0045.severity = none
+# Use explicit type instead of 'var'.
+dotnet_diagnostic.IDE0008.severity = warning
+# Field should not contain an underscore.
+dotnet_diagnostic.SA1310.severity = none
+# Use tuple to swap values.
+dotnet_diagnostic.IDE0180.severity = none
+# 'if' statement can be simplified.
+dotnet_diagnostic.IDE0046.severity = none
+# Conditional expression can be simplified
+dotnet_diagnostic.IDE0075.severity = none
+# Use pattern matching
+dotnet_diagnostic.IDE0078.severity = none
+#
+dotnet_diagnostic.SA1129.severity = none
+# Populate switch.
+dotnet_diagnostic.IDE0010.severity = warning
+
+# Ignore analyzers
+[{Assets/Plugins,Assets/Resources,obj}/{*.cs,**/*.cs}]
+generated_code = true
+dotnet_diagnostic.CS0108.severity = none
+dotnet_diagnostic.CS8019.severity = none
+dotnet_diagnostic.CS0618.severity = none
