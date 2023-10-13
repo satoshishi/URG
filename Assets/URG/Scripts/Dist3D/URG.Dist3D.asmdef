@@ -1,0 +1,16 @@
+{
+    "name": "URG.Dist3D",
+    "rootNamespace": "",
+    "references": [
+        "GUID:5edacc7b936ce4393a0e7b0c2b7e0598"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
