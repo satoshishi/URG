@@ -1,4 +1,4 @@
-namespace URG.SCIP
+namespace URG.SCIP.Core
 {
     using System;
     using System.Collections.Generic;

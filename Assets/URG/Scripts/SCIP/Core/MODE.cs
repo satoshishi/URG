@@ -1,4 +1,4 @@
-namespace URG.SCIP
+namespace URG.SCIP.Core
 {
     public enum MODE
     {
@@ -11,13 +11,5 @@ namespace URG.SCIP
         MD,
         GD, // 距離要求コマンド(2 種類)
         ME, // 距離・受光強度要求コマンド
-    }
-
-    public static class SCIPExtentions
-    {
-        public static string ToCMD(this MODE mode)
-        {
-            return mode.ToString();
-        }
     }
 }

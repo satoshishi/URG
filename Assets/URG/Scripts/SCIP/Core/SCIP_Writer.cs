@@ -1,4 +1,4 @@
-namespace URG.SCIP
+namespace URG.SCIP.Core
 {
     // http://sourceforge.net/p/urgnetwork/wiki/cs_sample_jp/
     public class SCIP_Writer
