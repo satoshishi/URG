@@ -36,10 +36,16 @@ namespace URG.Dist3D
             this.rawDistances.Clear();
             this.rawDistances.AddRange(this.streamer.GetCurrently().Distance);
 
+            if (this.rawDistances.Count <= 0)
+            {
+                this.distances = null;
+                return;
+            }
+
             this.distances = null;
             this.distances = new Vector3[this.rawDistances.Count];
 
-            for (int i = 0; i <= this.distances.Length; i++)
+            for (int i = 0; i < this.distances.Length; i++)
             {
                 this.distances[i] = this.translator.Handle(this.rawDistances[i], i);
             }

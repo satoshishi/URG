@@ -57,6 +57,8 @@ namespace URG.SCIP.Streaming
             {
                 this.client = new TcpClient();
                 this.client.Connect(ip, port);
+
+                Debug.Log($"Connected TcpClient IP -> {ip} PORT -> {port}");
             }
             catch (Exception e)
             {

@@ -336,8 +336,8 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 0
-  orthographic size: 5
+  orthographic: 1
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -360,14 +360,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 9.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1624580966
 GameObject:
   m_ObjectHideFlags: 0
@@ -459,10 +459,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0228fed0124f48c2a02ce07487b05f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ipAddress: 
-  port: 0
-  measurementStartStep: 0
-  measurementEndStep: 0
+  ipAddress: 192.168.0.11
+  port: 10940
+  measurementStartStep: 110
+  measurementEndStep: 1000
 --- !u!1 &2096661220
 GameObject:
   m_ObjectHideFlags: 0
@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 2096661221}
   - component: {fileID: 2096661223}
   - component: {fileID: 2096661222}
+  - component: {fileID: 2096661224}
   m_Layer: 0
   m_Name: Sensor
   m_TagString: Untagged
@@ -521,3 +522,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd073073c27c4d89af61192d558ec81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2096661224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096661220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840b3db730edf480fb357fcbd675e97d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isVisualizing: 1
+  distanceLineColor: {r: 0, g: 0, b: 0, a: 1}

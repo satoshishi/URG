@@ -1,0 +1,16 @@
+{
+    "name": "URG.Visualizer",
+    "rootNamespace": "",
+    "references": [
+        "GUID:26073afc54fb34baea804c83b06776f3"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

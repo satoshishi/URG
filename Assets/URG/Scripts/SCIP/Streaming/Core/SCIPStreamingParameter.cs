@@ -37,7 +37,7 @@ namespace URG.SCIP.Streaming
         /// <summary>
         /// Gets 取得する最初のステップ
         /// </summary>
-        public int MeasurementStartStep => this.measurementEndStep;
+        public int MeasurementStartStep => this.measurementStartStep;
 
         /// <summary>
         /// Gets 取得する最後のステップ

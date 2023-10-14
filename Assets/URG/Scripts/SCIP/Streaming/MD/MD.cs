@@ -8,7 +8,7 @@ namespace URG.SCIP.Streaming.MD
     /// </summary>
     public class MD
     {
-        private List<long> distance = null;
+        private List<long> distance = new List<long>();
 
         public List<long> Distance => this.distance;
 

@@ -29,6 +29,8 @@ namespace URG.SCIP.Streaming.MD
         {
             NetworkStream stream = await client.Stream();
 
+            Debug.Log($"Start MD Streaming");
+
             this.clientThread = new Thread(new ParameterizedThreadStart(this.Handle));
             this.clientThread.Start(stream);
         }
