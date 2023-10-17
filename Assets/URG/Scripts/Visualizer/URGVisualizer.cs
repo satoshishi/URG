@@ -1,9 +1,12 @@
-namespace URG.Visualizer
+namespace URG.Visualizing
 {
+    using System.Collections.Generic;
     using UnityEngine;
+    using URG.Detecting;
     using URG.Dist3D;
 
     [RequireComponent(typeof(I3DDistanceStreamer))]
+    [RequireComponent(typeof(ObjectDetectionEventHandler))]
     public class URGVisualizer : MonoBehaviour
     {
         [SerializeField]
@@ -12,7 +15,15 @@ namespace URG.Visualizer
         [SerializeField]
         private Color distanceLineColor;
 
+        [SerializeField]
+        private Color detectedLineColor;
+
+        [SerializeField]
+        private Color detectedCenterLineColor;
+
         private I3DDistanceStreamer distanceStreamer;
+
+        private ObjectDetectionEventHandler objectDetection;
 
         private Material lineMaterial;
 
@@ -32,12 +43,15 @@ namespace URG.Visualizer
 
             this.VisualizeDistance();
 
+            this.VisualizeDetecteds();
+
             GL.PopMatrix();
         }
 
         private void Start()
         {
             this.distanceStreamer = this.GetComponent<I3DDistanceStreamer>();
+            this.objectDetection = this.GetComponent<ObjectDetectionEventHandler>();
         }
 
         private void CreateLineMaterial()
@@ -77,6 +91,44 @@ namespace URG.Visualizer
 
                 GL.Vertex3(from.x, from.y, from.z);
                 GL.Vertex3(to.x, to.y, to.z);
+            }
+
+            GL.End();
+        }
+
+        private void VisualizeDetecteds()
+        {
+            List<DetectedObject> detecteds = this.objectDetection.Detecteds;
+
+            if (detecteds == null || detecteds.Count <= 0)
+            {
+                return;
+            }
+
+            foreach (DetectedObject detected in detecteds)
+            {
+                GL.Begin(GL.LINES);
+                GL.Color(this.detectedLineColor);
+
+                Vector3 from = this.transform.position;
+                Vector3 p0 = detected.StartStep;
+                Vector3 p1 = detected.EndStep;
+
+                GL.Vertex3(from.x, from.y, from.z);
+                GL.Vertex3(p0.x, p0.y, p0.z);
+
+                GL.Vertex3(from.x, from.y, from.z);
+                GL.Vertex3(p1.x, p1.y, p1.z);
+
+                GL.End();
+
+                GL.Begin(GL.LINES);
+                GL.Color(this.detectedCenterLineColor);
+
+                Vector3 center = detected.Center;
+
+                GL.Vertex3(from.x, from.y, from.z);
+                GL.Vertex3(center.x, center.y, center.z);
             }
 
             GL.End();

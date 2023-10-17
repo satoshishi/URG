@@ -1,9 +1,10 @@
 {
-    "name": "URG.Visualizer",
+    "name": "URG.Detecting",
     "rootNamespace": "",
     "references": [
         "GUID:26073afc54fb34baea804c83b06776f3",
-        "GUID:c9689ce80f5f34b04bbc5903e38463fc"
+        "GUID:c7e7dd7929f304b649cad77438c32ca1",
+        "GUID:38870fc0b8eb847978cc29b08c18c9d9"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
