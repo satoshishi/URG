@@ -2,7 +2,8 @@
     "name": "URG.Dist3D",
     "rootNamespace": "",
     "references": [
-        "GUID:5edacc7b936ce4393a0e7b0c2b7e0598"
+        "GUID:5edacc7b936ce4393a0e7b0c2b7e0598",
+        "GUID:5883eacd314b04e4282cb5470d07bbad"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

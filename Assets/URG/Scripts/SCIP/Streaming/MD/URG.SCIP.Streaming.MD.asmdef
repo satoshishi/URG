@@ -1,9 +1,11 @@
 {
-    "name": "URG.Operator",
+    "name": "URG.SCIP.Streaming.MD",
     "rootNamespace": "",
     "references": [
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
         "GUID:978d8d8f2311f4dcba25c26602631f9e",
-        "GUID:f51ebe6a0ceec4240a699833d6309b23"
+        "GUID:9cbf1f69c9203481181962319bd3c0b3",
+        "GUID:5883eacd314b04e4282cb5470d07bbad"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -4,6 +4,7 @@ namespace URG.SCIP.Streaming.MD
     using UnityEngine;
     using URG.SCIP.Core;
     using URG.SCIP.Streaming;
+    using URG.Sources;
 
     /// <summary>
     /// MDモードの開始やデータの提供をする
@@ -13,7 +14,7 @@ namespace URG.SCIP.Streaming.MD
     public class MDStreamer : MonoBehaviour
     {
         [SerializeField]
-        private SCIPStreamingParameter parameter;
+        private URGParamsProvider paramsProvider;
 
         [SerializeField]
         private TCPClientProvider client;
@@ -26,7 +27,7 @@ namespace URG.SCIP.Streaming.MD
 
         public async UniTask StartOperationAsync()
         {
-            string command = SCIP_Writer.MD(this.parameter.MeasurementStartStep, this.parameter.MeasurementEndStep, 1, 0, 0);
+            string command = SCIP_Writer.MD(this.paramsProvider.Parameter.MeasurementStartStep, this.paramsProvider.Parameter.MeasurementEndStep, 1, 0, 0);
 
             // MDモードをURGにリクエスト
             await this.writer.Handle(this.client, command);

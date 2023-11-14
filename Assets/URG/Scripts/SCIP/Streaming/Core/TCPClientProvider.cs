@@ -4,16 +4,17 @@ namespace URG.SCIP.Streaming
     using System.Net.Sockets;
     using Cysharp.Threading.Tasks;
     using UnityEngine;
+    using URG.Sources;
 
     /// <summary>
     /// TCP通信をするためのクライアントを提供する
     /// </summary>
-    [RequireComponent(typeof(SCIPStreamingParameter))]
     public class TCPClientProvider : MonoBehaviour
     {
-        private TcpClient client;
+        [SerializeField]
+        private URGParamsProvider paramsProvider;
 
-        private SCIPStreamingParameter parameter;
+        private TcpClient client;
 
         /// <summary>
         /// センサーとの接続が確立するまでawaitしてStreamを返す
@@ -28,8 +29,7 @@ namespace URG.SCIP.Streaming
 
         private void Awake()
         {
-            this.parameter = this.GetComponent<SCIPStreamingParameter>();
-            this.Connection(this.parameter.IP, this.parameter.Port);
+            this.Connection(this.paramsProvider.Parameter.IP, this.paramsProvider.Parameter.Port);
         }
 
         private void OnDestroy()
