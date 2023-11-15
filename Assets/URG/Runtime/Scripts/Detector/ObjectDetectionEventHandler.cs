@@ -32,12 +32,12 @@ namespace URG.Detecting
                 }
                 else
                 {
+                    this.detecteds.Clear();
+                    this.detecteds = value;
+
                     this.onDetected?.Invoke(this.detecteds);
                     this.detection = true;
                 }
-
-                this.detecteds.Clear();
-                this.detecteds = value;
             }
         }
 
